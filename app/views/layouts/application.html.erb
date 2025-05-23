@@ -8,9 +8,46 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap" rel="stylesheet">
   </head>
 
   <body>
+
+  <%# Navbar %>
+  <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://www.creativefabrica.com/wp-content/uploads/2019/03/Monogram-RM-Logo-Design-by-Greenlines-Studios.jpg" />
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", lists_path, class: "nav-link text-danger fw-bolder mr-1" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New List", new_list_path, class: "nav-link text-danger fw-bolder"  %>
+          </li>
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://i.redd.it/chainsaw-man-denji-headshot-pixel-art-by-me-v0-an1fgzvculga1.png?width=2500&format=png&auto=webp&s=40c0a0fab7c7decd83fbfb4e5c2753642e695efe" />
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://www.imdb.com/?ref_=nv_home">IMDB</a>
+              <a class="dropdown-item" href="https://www.movierankings.net/random">Random Movie Generator</a>
+              <%# <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a> %>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+      </ul>
+    </div>
+  </div>
+</div>
+
     <%= yield %>
   </body>
 </html>

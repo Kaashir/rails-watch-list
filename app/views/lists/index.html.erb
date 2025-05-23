@@ -1,0 +1,29 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/dark-vip-cinema-studio-still-life_23-2149500593.jpg?semt=ais_hybrid&w=740);">
+  <div class="container">
+    <h1 class="text-danger"><strong>R-Rated Movies</strong></h1>
+    <p>Your list of movies. Your choice. Your regret!</p>
+    <%= link_to "Create New List", new_list_path, class: "btn btn-dark" %>
+  </div>
+</div>
+
+
+
+<div class="container d-flex">
+    <div class="row">
+    <% list_count = 0 %>
+    <% @lists.each do |list| %>
+
+        <div class="col-sm-6">
+          <%= link_to list_path(list.id), class: "text-decoration-none" do %>
+            <div class="card text-black m-2 border-light shadow p-3 mb-5 bg-body rounded">
+              <img src="https://picsum.photos/500/200" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title text-center mt-1"><%= list.name %></h3>
+              </div>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
+
+  </div>
+</div>
