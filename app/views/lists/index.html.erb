@@ -16,7 +16,7 @@
         <div class="col-sm-6">
           <%= link_to list_path(list.id), class: "text-decoration-none" do %>
             <div class="card text-black m-2 border-light shadow p-3 mb-5 bg-body rounded">
-              <img src="https://picsum.photos/500/200" class="card-img-top" alt="...">
+              <%= cl_image_tag list.photo.key, class: "card-img-top" %>
               <div class="card-body">
                 <h3 class="card-title text-center mt-1"><%= list.name %></h3>
               </div>
